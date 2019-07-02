@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.layup.alarmmom">
+
+    <!--
+         "android.intent.action.BOOT_COMPLETED" 이 부분이 곧 Intent.ACTION_BOOT_COMPLETED 이라는 걸 다들 아시겠죠 !
+          android:enabled="true" 이 부분은 시스템이 알아서 BootReceiver를 실행한다는 뜻입니다.
+          android:exported="false" 이 부분은 외부 어플리케이션에서는 사용할 수 없으며 같은 앱 또는 같은 UserId를 가진 놈만 호출할 수 있다는 뜻입니다~
+    -->
+
+
+    <!-- 휴대 전화 부팅시 알람 반복 설정을 원할 경우 : RECEIVE_BOOT_COMPLETED / BOOT_COMPLETED Manifest.xml에 권한을 추가하십시오. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".useprogram.AlarmReciever"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.example.layup.alarmmom.useprogram.ALARM_START" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".useprogram.AlarmSoundService" />
+        <service android:name=".useprogram.AlarmOreoRestartService" />
+
+        <activity
+            android:name=".useprogram.AlarmDialog">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+    </application>
+</manifest>
