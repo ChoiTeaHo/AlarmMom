@@ -1,9 +1,5 @@
 # Hello, welcome to AlarmMom
-Various events can be output through the beacon.  
-The serial number of each beacon is registered, and the event according to each beacon is as follows.  
-beacon1. Coupon page  
-beacon2. Board Page  
-The beacon operates as Bluetooth after performing a transmission range (SSID) check.  
+미완성
 
 
 ## Demo  
