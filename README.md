@@ -1,5 +1,4 @@
 # Hello, welcome to AlarmMom
--미완성  
 -기록문서: https://drive.google.com/open?id=1nmlIOo6Bzeg-wHFjvE-vGy-2jdMAjtlpxVG0pE5c99g  
 
 
@@ -8,5 +7,5 @@
 
 
 <ul>
-<li>미완성</li>
+<li></li>
 </ul>
